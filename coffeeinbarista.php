@@ -4,8 +4,8 @@ $db = new DataBase();
 if ($db->dbConnect()) {
 
     //Paste ur sql code here
-    $sql = "SELECT profile.userId, profile.userPicUrl, profile.username, profile.email, profile.userStreetNo, profile.userTaman, profile.userPostalCode, profile.userState, wallet.walletId, wallet.walletBalance, wallet.walletPin FROM profile LEFT JOIN wallet ON profile.userId=wallet.userId";
-        
+    $userid = $db->prepareData($_POST['userId']);
+    $sql = "SELECT c.coffeeId, c.coffeePicUrl, c.coffeeTitle, c.coffeeDesc, c.coffeePrice FROM coffee c WHERE c.baristaId = '" . $userid . "'";
     $result = mysqli_query($db->getConnect(), $sql);
     if (mysqli_num_rows($result) != 0) {
         while($row = mysqli_fetch_assoc($result)) {

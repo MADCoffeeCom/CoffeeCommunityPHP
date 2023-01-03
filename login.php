@@ -13,10 +13,11 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         $row = mysqli_fetch_assoc($result);
 
         if (mysqli_num_rows($result) != 0) {
+            $dbuserID = $row['userId'];
             $dbusername = $row['username'];
             $dbpassword = $row['password'];
             if ($dbusername == $username && $dbpassword == $password) {
-                echo "Login Success";
+                echo "Login Success" . " - " . $dbuserID;
             } else echo "Username or Password wrong";
         } else echo "Username or Password wrong";
     } else echo "Error: Database connection";
