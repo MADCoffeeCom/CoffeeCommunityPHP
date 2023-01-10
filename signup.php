@@ -6,7 +6,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['userId'
         $table = "profile";
         $username = $db->prepareData($_POST['username']);
         $userId = $db->prepareData($_POST['userId']);
-        $password = $db->prepareData($_POST['password']);
+        $password = password_hash($password, PASSWORD_DEFAULT);
         $email = $db->prepareData($_POST['email']);
         // $password = password_hash($password, PASSWORD_DEFAULT);
         $sql = "INSERT INTO " . $table . " (username, userId, password, email) VALUES ('" . $username . "','" . $userId . "','" . $password . "','" . $email . "')";
