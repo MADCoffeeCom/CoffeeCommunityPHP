@@ -9,9 +9,12 @@ if ($db->dbConnect()) {
     $result = mysqli_query($db->getConnect(), $sql);
     if (mysqli_num_rows($result) != 0) {
         while($row = mysqli_fetch_assoc($result)) {
-
+            if($row['walletpin'] == null){
+                echo $row['walletId'] . " - " . $row['walletBalance'] . " - " . "empty";
+            } else {
+                echo $row['walletId'] . " - " . $row['walletBalance'] . " - " . $row['walletpin'];
+            }
             //It will return the result here, split the string in Java
-            echo $row['walletId'] . " - " . $row['walletBalance'] . " - " . $row['walletpin'];
             
         }
     } else echo "No results";
