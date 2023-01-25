@@ -4,8 +4,8 @@ $db = new DataBase();
 if ($db->dbConnect()) {
 
     //Paste ur sql code here
-    $username = $db->prepareData($_POST['username']);
-    $sql = "SELECT profile.userId, profile.baristaId, profile.adminId, profile.userPicUrl, profile.username, profile.email, profile.userStreetNo, profile.userTaman, profile.userPostalCode, profile.userState FROM profile WHERE userId='" . $username . "'";
+    $userId = $db->prepareData($_POST['userId']);
+    $sql = "SELECT profile.userId, profile.baristaId, profile.adminId, profile.userPicUrl, profile.username, profile.email, profile.userStreetNo, profile.userTaman, profile.userPostalCode, profile.userState FROM profile WHERE userId='" . $userId . "'";
         
     $result = mysqli_query($db->getConnect(), $sql);
     if (mysqli_num_rows($result) != 0) {

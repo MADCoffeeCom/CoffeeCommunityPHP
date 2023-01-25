@@ -4,7 +4,7 @@ $db = new DataBase();
 if ($db->dbConnect()) {
 
     //Paste ur sql code here
-    $sql = "SELECT c.coffeeId, c.coffeeTitle, c.coffeePicUrl, c.coffeeDesc, c.coffeeType, c.coffeePrice, c.ingredients, c.baristaId, p.username, p.userTaman, p.userLocation FROM coffee c LEFT JOIN barista b ON c.baristaId = b.baristaId LEFT JOIN profile p ON c.baristaId = p.baristaId WHERE b.`status` = 1";    
+    $sql = "SELECT c.coffeeId, c.coffeeTitle, c.coffeePicUrl, c.coffeeDesc, c.coffeeType, c.coffeePrice, c.ingredients, c.baristaId, p.username, p.userTaman, p.userLocation FROM coffee c LEFT JOIN barista b ON c.baristaId = b.baristaId LEFT JOIN profile p ON c.baristaId = p.baristaId WHERE b.`status` = 1 ORDER BY coffeeId DESC ";    
 
     $result = mysqli_query($db->getConnect(), $sql);
     if (mysqli_num_rows($result) != 0) {
