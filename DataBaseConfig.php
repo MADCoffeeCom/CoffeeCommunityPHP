@@ -10,15 +10,15 @@ class DataBaseConfig
     public function __construct()
     {
 
-        // $this->servername = 'sql6.freemysqlhosting.net';
-        // $this->username = 'sql6587617';
-        // $this->password = 'ueLJEfjwWf';
-        // $this->databasename = 'sql6587617';
+        $this->servername = 'sql12.freemysqlhosting.net';
+        $this->username = 'sql12593493';
+        $this->password = 'NdAklvnyvX';
+        $this->databasename = 'sql12593493';
 
-        $this->servername = 'localhost';
-        $this->username = 'root';
-        $this->password = '';
-        $this->databasename = 'coffeecomdb';
+        // $this->servername = 'localhost';
+        // $this->username = 'root';
+        // $this->password = '';
+        // $this->databasename = 'coffeecomdb';
 
     }
 }
