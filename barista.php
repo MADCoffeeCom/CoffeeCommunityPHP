@@ -11,7 +11,7 @@ if ($db->dbConnect()) {
         while($row = mysqli_fetch_assoc($result)) {
 
             //It will return the result here, split the string in Java
-            echo $row['baristaId'] . " - " . $row['userPicUrl'] . " - " . $row['username'] . " - " . $row['baristaDesc'] . " - " . $row['userStreetNo'] . " - ". $row['userPostalCode'] . " - ". $row['userState'] . " - ". $row['userTaman'] . " - " . $row['userLocation'] . "split";
+            echo $row['baristaId'] . " - " . $row['userPicUrl'] . " - " . $row['username'] . " - " . $row['baristaDesc'] . " - " . $row['userStreetNo'] . " - ". $row['userPostalCode'] . " - ". $row['userState'] . " - ". $row['userTaman'] . " - " . $row['userLocation'] . " - " . $row['userId'] . "split";
             
         }
     } else echo "No results";
