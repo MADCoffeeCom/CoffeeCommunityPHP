@@ -12,7 +12,7 @@ if ($db->dbConnect()) {
     $ingredients = $db->prepareData($_POST['ingredients']);
     $coffeeId = $db->prepareData($_POST['coffeeId']);
 
-    $sql = "UPDATE coffee SET coffeeTitle = '" . $coffeeTitle . "', coffeePicUrl = '" . $coffeePicUrl . "', coffeeDesc = '" . $coffeeDesc . "', coffeeType = '" . $coffeeType . "', ingredients = '" . $ingredients . "' WHERE coffeeId='" . $coffeeId . "'";
+    $sql = "UPDATE coffee SET coffeeTitle = '" . $coffeeTitle . "', coffeePicUrl = '" . $coffeePicUrl . "', coffeeDesc = '" . $coffeeDesc . "', coffeeType = '" . $coffeeType . "', ingredients = '" . $ingredients . "', coffeePrice = '" . $coffeePrice . "' WHERE coffeeId='" . $coffeeId . "'";
     if(mysqli_query($db->getConnect(), $sql)){
         echo "Update Success";
     } else echo "No results";
