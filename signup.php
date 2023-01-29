@@ -13,7 +13,6 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['userId'
         $userTaman = $db->prepareData($_POST['userTaman']);
         $userPostalCode = $db->prepareData($_POST['userPostalCode']);
         $userState = $db->prepareData($_POST['userState']);
-        // $password = password_hash($password, PASSWORD_DEFAULT);
         $sql = "INSERT INTO " . $table . " (username, userId, password, email, userStreetNo, userTaman,userPostalCode,userState) VALUES ('" . $username . "','" . $userId . "','" . $password . "','" . $email . "' ,'" . $userStreetNo . "' ,'" . $userTaman . "' ,'" . $userPostalCode . "' ,'" . $userState . "')";
         if (mysqli_query($db->getConnect(), $sql)) {
             echo "Sign Up Success";
