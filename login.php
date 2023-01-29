@@ -18,8 +18,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             $dbpassword = $row['password'];
             if ($dbusername == $username && password_verify($password, $dbpassword)) {
                 echo "Login Success" . " - " . $dbuserID;
-            } else echo "Username or Password wrong " . " " . $password . " " . $dbpassword . " hashed: " . $hashed;
-        } else echo "Username or Password wrong " . " " . $password . " " . $dbpassword . " hashed: " . $hashed;
+            } else echo "Username or Password wrong";
+        } else echo "Username or Password wrong";
     } else echo "Error: Database connection";
 } else echo "All fields are required";
 
